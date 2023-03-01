@@ -16,7 +16,7 @@ exemple:
 
 grid to check :
  ┌──┬──┬──┬──┬──┐
- │ .│ .│ x│ x│ x│
+ | .│ .│ x│ x│ x│
  ├──┼──┼──┼──┼──┤
  │ x│ .│ .│ .│ .│
  ├──┼──┼──┼──┼──┤
@@ -66,9 +66,23 @@ DP matrix on completion :
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <main_header.h>
+
+
+void welcome_error(int val)
+{
+    if (val > ARG_SIZE)
+    {
+        write(stderr, ERR_MSG_MAX_SIZE, my_strlen(ERR_MSG_MAX_SIZE));
+        return EXIT_FAILURE;
+    }
+}
+
+
 
 int main(int argc, char** argv)
 {
+    welcome_error(argc);
 
 
     return 0;

@@ -5,7 +5,7 @@
 
 extern int READLINE_READ_SIZE;
 extern char* rl_buff;
-
+#define MAX_INPUT_TOKENS 50
 //readline.h
 
 char**  dirty_split(char* str, char ch);

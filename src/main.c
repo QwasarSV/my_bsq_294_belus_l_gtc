@@ -22,7 +22,7 @@ int main(int argc, char** argv)
     // printf("this is the file %s \n", buff);
     tokens = dirty_split(buff, '\n');
     int size = my_ctoi(tokens[0], my_strlen(tokens[0]));
-    // printf("ctoi result %i\n", val);
+    // printf("ctoi result %i\n", size);
     my_bsq(tokens, size);
     free(buff);
     free(tokens);

@@ -3,7 +3,7 @@
 
 #include <main_header.h>
 
-#define MAX_INPUT_TOKENS 100
+#define MAX_INPUT_TOKENS 250
 
 int     get_size_fd(char* filename);
 char*   read_map(char* filename);

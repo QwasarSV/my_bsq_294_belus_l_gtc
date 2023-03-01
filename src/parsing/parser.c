@@ -23,7 +23,11 @@ char* read_map(char* filename)
   my_bzero(buff, size_fd);
   int fd = open(filename, O_RDONLY);
   int size_block = 0;
-  while (size_block = read(fd, buff, BLOCK_SIZE));
+  int pos = 0;
+  while (size_block = read(fd, &buff[pos], BLOCK_SIZE))
+  {
+    pos += size_block;
+  }
   return buff;
 }
 

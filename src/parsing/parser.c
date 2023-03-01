@@ -19,7 +19,7 @@ int get_size_fd(char* filename)
 char* read_map(char* filename)
 {
   int size_fd = get_size_fd(filename);
-  char* buff = malloc(sizeof(char)*size_fd);
+  char* buff = malloc(sizeof(char)*(size_fd + 1));
   my_bzero(buff, size_fd);
   int fd = open(filename, O_RDONLY);
   int size_block = 0;
@@ -36,6 +36,10 @@ int find_ch(char* str, char ch)
     }
     return index;
 }
+
+
+
+
 
 char** dirty_split(char* str, char ch)
 {

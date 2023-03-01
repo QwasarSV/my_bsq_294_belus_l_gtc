@@ -11,15 +11,15 @@
 #include <my_string.h>
 #include <my_error_handler.h>
 #include <non_standard_header.h>
-//my_split.h
+
 #define MAX_SIZE 1000
 
-//stdlib.h
-
-// int     my_ctoi(char *string, size_t n);
-// char*   itoa(int value, char* result, int base);
-// void    my_revswap(char *ptr, char*ptr1, char tmp_char);
-// void*   my_realloc(void* buff, size_t size);
-
+int min(int val_01, int val_02);
+int top(int** dp, int index, int jndex);
+int left(int** dp, int index, int jndex);
+int topleft(int** dp, int index, int jndex);
+// void get_map(char map[][MAX_SIZE], int* rows, int* cols);
+void print_row(char** map, int size);
+int my_bsq(char** tokens, int size);
 
 #endif

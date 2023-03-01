@@ -9,10 +9,11 @@
 
 #include <my_readline.h>
 #include <my_parser.h>
+#include <my_string.h>
+#include <my_error_handler.h>
 
 //my_split.h
-
-
+#define MAX_SIZE 1000
 
 //stdlib.h
 

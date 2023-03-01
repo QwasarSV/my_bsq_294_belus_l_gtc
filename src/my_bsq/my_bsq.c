@@ -51,7 +51,7 @@ int topleft(int** dp, int index, int jndex)
 void print_row(char** map, int size)
 {
     int index = 1;
-    while (index < size)
+    while (index <= size)
     {
         printf("%s\n",map[index]);
         index += 1;
@@ -62,7 +62,7 @@ void print_dp(int** dp, int rows, int cols)
 {
     int index = 1;
     int jndex = 0; 
-    while (index < rows)
+    while (index <= rows)
     {
         while (jndex < cols)
         {
@@ -107,7 +107,7 @@ void insert_result(char** tokens, int coord_y, int coord_x, int size)
 {
     int index = 0;
     int jndex = 0;
-    printf("result is :\n");
+    // printf("result is :\n");
     index = coord_y - size + 1;
     while (index <= coord_y)
     {

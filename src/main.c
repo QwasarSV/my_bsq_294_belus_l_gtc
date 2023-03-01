@@ -78,12 +78,14 @@ void welcome_error(int val)
     }
 }
 
-
-
 int main(int argc, char** argv)
 {
     welcome_error(argc);
 
+    char** tokens = NULL;
 
+
+    dirty_split("asdasdasd", '\n');
+    
     return 0;
 }

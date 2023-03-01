@@ -1,5 +1,33 @@
 #include <main_header.h>
 
+#define BLOCK_SIZE 512
+
+int get_size_fd(char* filename)
+{
+  int size_block = 0;
+  int size_fd = 0;
+  char* buff[BLOCK_SIZE] = {'\0'};
+  int fd = open(filename, O_RDONLY);
+
+  while (size_block = read(fd, buff, BLOCK_SIZE))
+  {
+    size_fd += size_block;
+  }
+  close(fd);
+  return size_fd;
+}
+
+char* read_map(char* filename)
+{
+  int size_fd = get_size_fd(filename);
+  char* buff = malloc(sizeof(char)*size_fd);
+  int fd = open(filename, O_RDONLY);
+  int size_block = 0;
+  while (size_block = read(fd, buff, BLOCK_SIZE));
+
+  return buff;
+}
+
 int find_ch(char* str, char ch)
 {
     int index = 0;

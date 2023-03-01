@@ -30,21 +30,22 @@ XTRAFLAGS := $(INC_FLAGS) -MMD -MP
 
 # The final build step.
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDFLAGS)
+	$(CC) $(OBJS) -o $@ 
 	cp $(BUILD_DIR)/$(TARGET_EXEC) ./
 # Build step for C source
 $(BUILD_DIR)/%.c.o: %.c
 	mkdir -p $(dir $@)
 	$(CC) $(XTRAFLAGS) -c $< -o $@
-
+#$(LDFLAGS)
 .PHONY: clean fclean debug debugc
 clean:
-	rm -r $(BUILD_DIR)
+	rm $(BUIS)
+	rm $(BUILD_DIR)/$(TARGET_EXEC)
+	rm $(TARGET_EXEC)
 
 fclean:
-	rm $(BUIS)
+	rm -r $(BUILD_DIR)
 	rm $(TARGET_EXEC)
-	rm $(BUILD_DIR)/$(TARGET_EXEC)
 
 debug: $(OBJS)
 	$(CC) $(OBJS) -o $@ $(LDFLAGS)

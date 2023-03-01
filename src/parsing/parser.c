@@ -37,10 +37,6 @@ int find_ch(char* str, char ch)
     return index;
 }
 
-
-
-
-
 char** dirty_split(char* str, char ch)
 {
     char** tokens = malloc(sizeof(char*) * MAX_INPUT_TOKENS);

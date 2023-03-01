@@ -1,5 +1,4 @@
 #include <main_header.h>
-
 #define BLOCK_SIZE 512
 
 int get_size_fd(char* filename)
@@ -21,10 +20,10 @@ char* read_map(char* filename)
 {
   int size_fd = get_size_fd(filename);
   char* buff = malloc(sizeof(char)*size_fd);
+  my_bzero(buff, size_fd);
   int fd = open(filename, O_RDONLY);
   int size_block = 0;
   while (size_block = read(fd, buff, BLOCK_SIZE));
-
   return buff;
 }
 

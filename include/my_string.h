@@ -1,5 +1,5 @@
-#ifndef __HEADERFILE_G_
-#define __HEADERFILE_G_
+#ifndef __STRINGHEADER_
+#define __STRINGHEADER_
 
 #include <main_header.h>
 

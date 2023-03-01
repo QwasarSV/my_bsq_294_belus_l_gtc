@@ -7,11 +7,10 @@
 #include <fcntl.h>
 #include <stdbool.h>
 
-#include <my_readline.h>
 #include <my_parser.h>
 #include <my_string.h>
 #include <my_error_handler.h>
-
+#include <non_standard_header.h>
 //my_split.h
 #define MAX_SIZE 1000
 

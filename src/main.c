@@ -69,22 +69,24 @@ DP matrix on completion :
 #include <main_header.h>
 
 
-void welcome_error(int val)
+int welcome_error(int val)
 {
     if (val > ARG_SIZE)
     {
-        write(stderr, ERR_MSG_MAX_SIZE, my_strlen(ERR_MSG_MAX_SIZE));
+        write(STDERR_FILENO, ERR_MSG_MAX_SIZE, my_strlen(ERR_MSG_MAX_SIZE));
         return EXIT_FAILURE;
     }
+    return EXIT_SUCCESS;
 }
 
 int main(int argc, char** argv)
 {
     welcome_error(argc);
-
+    char* buff = NULL;
     char** tokens = NULL;
 
-
+    buff = read_map(argv[1]);
+    printf("this is the file %s \n", buff);
     dirty_split("asdasdasd", '\n');
     
     return 0;

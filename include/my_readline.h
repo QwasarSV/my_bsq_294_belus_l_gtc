@@ -1,5 +1,5 @@
-#ifndef __HEADERFILE_F_
-#define __HEADERFILE_F_
+#ifndef __READLINE_HEADERFILE_
+#define __READLINE_HEADERFILE_
 
 #include <main_header.h>
 
@@ -13,5 +13,5 @@ char*   init_my_readline();                         // main,
 int     my_realloc_rl(int size);                    // readline,
 int     seek_newline(int size);                     // readline
 bool    is_newline(int size);                       // readline,
-void    tmp_buff_reset();                           // readline,
+
 #endif

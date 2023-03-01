@@ -9,8 +9,10 @@ export C_INCLUDE_PATH=include/
 
 # Find all the C files we want to compile
 # Note the single quotes around the * expressions. Make will incorrectly expand these otherwise.
+
 SRCS := $(shell find $(SRC_DIRS) -name '*.c')
-BUIS := $(shell find $(BUILD_DIR) -name '*.o')
+# rm $(BUIS)
+# BUIS := $(shell find $(BUILD_DIR) -name '*.o')
 # String substitution for every C file.
 # As an example, hello.c turns into ./build/hello.c.o
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
@@ -29,6 +31,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 XTRAFLAGS := $(INC_FLAGS) -MMD -MP
 
 # The final build step.
+
 $(BUILD_DIR)/$(TARGET_EXEC): $(OBJS)
 	$(CC) $(OBJS) -o $@ 
 	cp $(BUILD_DIR)/$(TARGET_EXEC) ./
@@ -39,7 +42,7 @@ $(BUILD_DIR)/%.c.o: %.c
 #$(LDFLAGS)
 .PHONY: clean fclean debug debugc
 clean:
-	rm $(BUIS)
+	rm $(shell find $(BUILD_DIR) -name '*.o')
 	rm $(BUILD_DIR)/$(TARGET_EXEC)
 	rm $(TARGET_EXEC)
 

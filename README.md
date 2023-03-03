@@ -3,7 +3,7 @@
 
 ## Task
 
-The objectif is to gind the largest possible square inside a map that contains obstacles. 
+The objectif is to find the largest possible square inside a map that contains obstacles. 
 
 The challenge was to understand and use Dynamic programming. 
 
